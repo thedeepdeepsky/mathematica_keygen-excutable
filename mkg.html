@@ -1,0 +1,269 @@
+<!doctype html>
+
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+
+<title>Wolfram Mathematica 13 Key Generator Online - iBug</title>
+
+
+
+
+<meta itemprop="headline" content="Wolfram Mathematica 13 Key Generator Online">
+<meta itemprop="description" content="This page provides:">
+<div class="page__inner-wrap">
+<section class="page__content" itemprop="text">
+<p>This page provides:</p>
+<ul>
+<li>Wolfram Mathematica 11 Key Generator</li>
+<li>Wolfram Mathematica 12 Key Generator</li>
+<li>Wolfram Mathematica 13 Key Generator</li>
+<li>Wolfram System Modeler 12 Key Generator</li>
+<li>Wolfram System Modeler 13 Key Generator</li>
+</ul>
+
+<div class="form-inline">
+<p style="margin-bottom: 0;">Select product:</p>
+<input type="radio" id="product-mma12" name="product" value="mma12" />
+<label for="product-mma12">Mathematica 11/12</label><br />
+<input type="radio" id="product-mma13" name="product" value="mma13" checked="" />
+<label for="product-mma13">Mathematica 13</label><br />
+<input type="radio" id="product-sm" name="product" value="sm12" />
+<label for="product-sm">System Modeler 12/13</label>
+</div>
+<p>Enter your MathID below </p>
+<p><input type="text" id="mathId" placeholder="xxxx-xxxxx-xxxxx" /></p>
+<p>Enter your Activation below (if you don't have ,leave it blank) and press <strong>Generate</strong>.</p>
+<p><input type="text" id="actkey" placeholder="xxxx-xxxx-xxxxxx"/></p>
+<p><button id="generate" class="btn btn--primary">Generate</button></p>
+<p id="result">Press <b>Generate</b>!</p>
+</div>
+<script type="text/javascript">
+								function f1(n, byte, c) {
+								    for (var bitIndex = 0; bitIndex <= 7; bitIndex++) {
+								        var bit = (byte >> bitIndex) & 1;
+								        if (bit + ((n - bit) & ~1) === n) {
+								            n = (n - bit) >> 1;
+								        } else {
+								            n = ((c - bit) ^ n) >> 1;
+								        }
+								    }
+								    return n;
+								}
+								function f1b(n, byte, c) {
+								    var bit;
+									for (var bitIndex = 0; bitIndex <= 7; bitIndex++) {
+								        var bit = (byte >> bitIndex) & 1;
+								        if (bit + ((n - bit) & ~1) === n) {
+								            n = (n - bit) >> 1;
+								        } else {
+								            n = ((c - bit) ^ n) >> 1;
+								        }
+								    }
+								    return bit;
+								}
+								function genPassword(str, hash) {
+								    for (var byteIndex = str.length - 1; byteIndex >= 0; byteIndex--) {
+								        hash = f1(hash, str.charCodeAt(byteIndex), 0x105C3);
+								    }
+								    var n1 = 0;
+								    while (f1(f1(hash, n1 & 0xFF, 0x105C3), n1 >> 8, 0x105C3) !== 0xA5B6) {
+								        if (++n1 >= 0xFFFF) {
+								            return "Error";
+								        }
+								    }
+								    n1 = Math.floor(((n1 + 0x72FA) & 0xFFFF) * 99999.0 / 0xFFFF);
+								    var n1str = ("0000" + n1.toString(10)).slice(-5);
+								    var temp = parseInt(n1str.slice(0, -3) + n1str.slice(-2) + n1str.slice(-3, -2), 10);
+								    temp = Math.ceil((temp / 99999.0) * 0xFFFF);
+								    temp = f1(f1(0, temp & 0xFF, 0x1064B), temp >> 8, 0x1064B);
+								    for (byteIndex = str.length - 1; byteIndex >= 0; byteIndex--) {
+								        temp = f1(temp, str.charCodeAt(byteIndex), 0x1064B);
+								    }
+								    var n2 = 0;
+								    while (f1(f1(temp, n2 & 0xFF, 0x1064B), n2 >> 8, 0x1064B) !== 0xA5B6) {
+								        if (++n2 >= 0xFFFF) {
+								            return "Error";
+								        }
+								    }
+								    n2 = Math.floor((n2 & 0xFFFF) * 99999.0 / 0xFFFF);
+								    var n2str = ("0000" + n2.toString(10)).slice(-5);
+								    return n2str[3] + n1str[3] + n1str[1] + n1str[0] + "-"
+								        + n2str[4] + n1str[2] + n2str[0] + "-"
+								        + n2str[2] + n1str[4] + n2str[1] + "::1";
+								}
+								function genPasswordn(str, hash) {
+								    for (var byteIndex = str.length - 1; byteIndex >= 0; byteIndex--) {
+								        hash = f1(hash, str.charCodeAt(byteIndex), 0x105C3);
+								    }
+								    var n1 = 0;
+								    while (f1(f1(hash, n1 & 0xFF, 0x105C3), n1 >> 8, 0x105C3) !== 0xA5B6) {
+								        if (++n1 >= 0xFFFF) {
+								            return "Error";
+								        }
+								    }
+								    n1 = Math.floor(((n1 + 0x72FA) & 0xFFFF) * 99999.0 / 0xFFFF);
+								    var n1str = ("0000" + n1.toString(10)).slice(-5);
+								    var temp = parseInt(n1str.slice(0, -3) + n1str.slice(-2) + n1str.slice(-3, -2), 10);
+								    temp = Math.ceil((temp / 99999.0) * 0xFFFF);
+								    temp = f1(f1(0, temp & 0xFF, 0x1064B), temp >> 8, 0x1064B);
+								    for (byteIndex = str.length - 1; byteIndex >= 0; byteIndex--) {
+								        temp = f1(temp, str.charCodeAt(byteIndex), 0x1064B);
+								    }
+								    var n2 = 0;
+								    while (f1(f1(temp, n2 & 0xFF, 0x1064B), n2 >> 8, 0x1064B) !== 0xA5B6) {
+								        if (++n2 >= 0xFFFF) {
+								            return "Error";
+								        }
+								    }
+								    n2 = Math.floor((n2 & 0xFFFF) * 99999.0 / 0xFFFF);
+								    var n2str = ("0000" + n2.toString(10)).slice(-5);
+								    return n1str;
+								}
+								function genPasswordtemp(str, hash) {
+								    for (var byteIndex = str.length - 1; byteIndex >= 0; byteIndex--) {
+								        hash = f1(hash, str.charCodeAt(byteIndex), 0x105C3);
+								    }
+								    var n1 = 0;
+								    while (f1(f1(hash, n1 & 0xFF, 0x105C3), n1 >> 8, 0x105C3) !== 0xA5B6) {
+								        if (++n1 >= 0xFFFF) {
+								            return "Error";
+								        }
+								    }
+								    n1 = Math.floor(((n1 + 0x72FA) & 0xFFFF) * 99999.0 / 0xFFFF);
+								    var n1str = ("0000" + n1.toString(10)).slice(-5);
+								    var temp1 = parseInt(n1str.slice(0, -3) + n1str.slice(-2) + n1str.slice(-3, -2), 10);
+								    var temp = temp1;
+									temp = Math.ceil((temp / 99999.0) * 0xFFFF);
+								    temp = f1(f1(0, temp & 0xFF, 0x1064B), temp >> 8, 0x1064B);
+								    for (byteIndex = str.length - 1; byteIndex >= 0; byteIndex--) {
+								        temp = f1(temp, str.charCodeAt(byteIndex), 0x1064B);
+								    }
+								    var n2 = 0;
+								    while (f1(f1(temp, n2 & 0xFF, 0x1064B), n2 >> 8, 0x1064B) !== 0xA5B6) {
+								        if (++n2 >= 0xFFFF) {
+								            return "Error";
+								        }
+								    }
+								    n2 = Math.floor((n2 & 0xFFFF) * 99999.0 / 0xFFFF);
+								    var n2str = ("0000" + n2.toString(10)).slice(-5);
+									var nt = n2;
+								    return f1(0x29C2,'2',0x105C3);
+								 } 
+								function genPasswordn2(str, hash) {
+								    for (var byteIndex = str.length - 1; byteIndex >= 0; byteIndex--) {
+								        hash = f1(hash, str.charCodeAt(byteIndex), 0x105C3);
+								    }
+								    var n1 = 0;
+								    while (f1(f1(hash, n1 & 0xFF, 0x105C3), n1 >> 8, 0x105C3) !== 0xA5B6) {
+								        if (++n1 >= 0xFFFF) {
+								            return "Error";
+								        }
+								    }
+								    n1 = Math.floor(((n1 + 0x72FA) & 0xFFFF) * 99999.0 / 0xFFFF);
+								    var n1str = ("0000" + n1.toString(10)).slice(-5);
+								    var temp = parseInt(n1str.slice(0, -3) + n1str.slice(-2) + n1str.slice(-3, -2), 10);
+								    temp = Math.ceil((temp / 99999.0) * 0xFFFF);
+								    temp = f1(f1(0, temp & 0xFF, 0x1064B), temp >> 8, 0x1064B);
+								    for (byteIndex = str.length - 1; byteIndex >= 0; byteIndex--) {
+								        temp = f1(temp, str.charCodeAt(byteIndex), 0x1064B);
+								    }
+								    var n2 = 0;
+								    while (f1(f1(temp, n2 & 0xFF, 0x1064B), n2 >> 8, 0x1064B) !== 0xA5B6) {
+								        if (++n2 >= 0xFFFF) {
+								            return "Error";
+								        }
+								    }
+								    n2 = Math.floor((n2 & 0xFFFF) * 99999.0 / 0xFFFF);
+								    var n2str = ("0000" + n2.toString(10)).slice(-5);
+								    return n2str;
+								}
+								function checkMathId(s) {
+								    if (s.length != 16)
+								        return false;
+								    for (let i = 0; i < s.length; i++) {
+								        if (i === 4 || i === 10) {
+								            if (s[i] !== "-")
+								                return false;
+								        } else {
+								            if ("0123456789".search(s[i]) < 0)
+								                return false;
+								        }
+								    }
+								    return true;
+								}
+								function checkActkey(s) {
+								    if (s.length != 16)
+								        return false;
+								    for (let i = 0; i < s.length; i++) {
+								        if (i === 4 || i === 9) {
+								            if (s[i] !== "-")
+								                return false;
+								        } 
+								    }
+								    return true;
+								}
+								function genActivationKey() {
+								    s = "";
+								    for (let i = 0; i < 14; i++) {
+								        s += Math.floor(Math.random() * 10);
+								        if (i === 3 || i === 7)
+								            s += "-";
+								    }
+								    return s;
+								}
+
+								document.getElementById("generate").addEventListener("click", function () {
+								    var mathId = document.getElementById("mathId").value.trim();
+									var actkey2= document.getElementById("actkey").value.trim();
+								    if (!checkMathId(mathId)) {
+								        document.getElementById("result").innerText = "Bad MathID!";
+								    } else {
+								        var activationKey = genActivationKey();
+										if(checkActkey(actkey2)) {
+											activationKey = actkey2;
+										}
+								        var magicNumbers;
+								        var software = document.querySelector("input[name=product]:checked").value;
+								        if (software === "mma12" || software === "mma13") {
+								            magicNumbers = [10690, 12251, 17649, 24816, 33360, 35944, 36412, 42041, 42635, 44011, 53799, 56181, 58536, 59222, 61041];
+								        } else if (software === "sm12") {
+								            magicNumbers = [4912, 4961, 22384, 24968, 30046, 31889, 42446, 43787, 48967, 61182, 62774];
+								        } 
+								        
+								        var magicNumber = magicNumbers[0];
+								        var password = genPassword(mathId + "$1&" + activationKey, magicNumber);
+										var prod = software;
+										var valid = checkActkey(actkey2);
+										var key=actkey2;
+										var n1dis=genPasswordn(mathId + "$1&" + activationKey,magicNumber);
+										var n2dis=genPasswordn2(mathId + "$1&" + activationKey,magicNumber);
+										var tempdis=genPasswordtemp(mathId + "$1&" + activationKey,magicNumber);
+										var fq=f1(0x29C2,'2',0x105C3);
+										 document.getElementById("result").innerHTML = `
+								        <p>
+										<br>
+										<b>input_activation_key_is_valid</b>: ${valid};
+										<br>
+										<b>input_activation_key</b>: ${key}
+										<br>
+								        <b>Activation Key</b>: ${activationKey}
+								        <br>
+								        <b>n1</b>: ${n1dis}
+								        <br>
+										<b>n2</b>: ${n2dis}
+								        <br>
+										<b>temp</b>: ${tempdis}
+								        <br>
+										<b>f1t</b>: ${fq}
+								        <br>
+										<b>Password</b>: ${password}
+										
+										</p>
+								        `;
+								    }
+								});
+							</script>
+</section>
+</body>
+</html>
